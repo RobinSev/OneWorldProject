@@ -27,6 +27,6 @@ We were evaluated on :
 
 ## Improvments possible
 
-* the implementation of tests functions (it wasn't ask as part of the evaluation). We made extended user tests to each part of the site, but it does not guarantee the stability of each function properly. 
-* Segmenting the controller into smaller pieces. We found out a solution to do so, but this discovery came out too late in the project and implemented it would have required too much changes in our routes and controller, considering the time and work we had left.
-* we wanted to add some functionalities, such as a newsletter system allowing a project manager to send information through email, and a notification system. But we lacked the time (considering this wasn't the only project and work we had to do at that time).
+* The implementation of tests functions (it wasn't ask as part of the evaluation). We made extended user tests to each part of the site, but it does not guarantee the stability of each function properly. 
+* The segmentation of the controller into smaller files. We found out a solution to do so, but this discovery came out too late in the project and implemented it would have required too much changes in our routes and controller, considering the time and work we had left.
+* The addition of some functionalities, such as a newsletter system allowing a project manager to send information through email, or a notification system. But we lacked the time (considering this wasn't the only project and work we had to do at that time).
