@@ -25,7 +25,7 @@ We were evaluated on :
 * better-squilte3
 * cookie-session
 
-## Improvments
+## Improvments possibles
 
 * the implementation of tests functions (it wasn't ask as part of the evaluation). We made extended user tests to each part of the site, but it does not guarantee the stability of each function properly. 
 * Segmenting the controller into smaller pieces. We found out a solution to do so, but this discovery came out too late in the project and implemented it would have required too much changes in our routes and controller, considering the time and work we had left.
