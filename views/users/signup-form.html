@@ -1,0 +1,84 @@
+{{>header}}
+
+<!--Améliorer avec style sheet pour classes container-form, form-card et form-sbmt-btn -->
+<div class="container" style="margin-top: 10vh;">
+    <div class="row">
+      <div class="col-md-8 mx-auto">
+          <h1 class="text-white">Aidez-nous à rendre le monde meilleur, </h1>
+          <h3 class="text-white">Faites parti de l'aventure!</h3>
+      </div>
+    </div>
+  
+    <div class="card mx-auto mt-4" style="width:550px; border: 1px solid black;">
+      <div class="card-body">
+        <form action="/signup" method="post">
+          <div class="form-group">
+            {{#emailTaken}}
+              <p class="text-danger font-italic">Cet adresse email est déjà utilisée. Si vous souhaitez vous connecter avec, cliquez sur "se connecter" en haut à gauche de l'écran.</p>
+            {{/emailTaken}}
+            <label for="mail">Adresse email : </label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">@</span>
+              </div>
+              <input class="form-control" type="email" placeholder="name@example.com" name="mail" value="{{email}}" maxlength="30" required>
+            </div>
+          </div>
+          <div class="form-group">
+            {{#usernameTaken}}
+              <p class="text-danger font-italic">Ce nom d'utilisateur est déjà pris. Merci d'en choisir un autre.</p>
+            {{/usernameTaken}} 
+            <label for="username">Nom d'utilisateur : </label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fa fa-user"></i></span>
+              </div>
+              <input class="form-control" type="text" placeholder="nom d'utilisateur" name="username" value="{{username}}" maxlength="20" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="pwd">Mot de passe : </label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-key"></i></span>
+              </div>
+              <input class="form-control" type="password" placeholder="mot de passe" name="pwd" maxlength="50" required id="pwd">
+            </div>
+          </div>
+          <div class="form-group">
+            {{#pwdNotConfirmed}}
+              <p class="text-danger font-italic">Les mots de passe doivent être identiques.</p>
+            {{/pwdNotConfirmed}}
+            <label for="verifpwd">Confirmez le mot de passe : </label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-shield-alt"></i></span>
+              </div>
+              <input class="form-control" type="password" name="verifpwd" maxlength="50" required id="verifpwd">
+            </div>
+          </div>
+          <div class="row ml-2 mr-2">
+            <div class="col-sm-6">
+              <small class="form-text"><input type="checkbox" onclick="pwdVisibility()">Afficher les mots de passe.</small>
+            </div>
+            <div class="col-sm-6">
+              <button class="btn btn-primary float-right" type="submit">S'inscrire</button>
+            </div>
+          </div>
+        </form> 
+      </div>
+    </div>
+  
+  <script>
+  function pwdVisibility() {
+      var pwd = document.getElementById('pwd');
+      var verifpwd = document.getElementById('verifpwd');
+      pwd.type = pwd.type === "password" ? "text" : "password";
+      verifpwd.type = verifpwd.type === "password" ? "text" : "password";
+  }
+  </script>
+  </div>
+
+
+
+{{>footer}}

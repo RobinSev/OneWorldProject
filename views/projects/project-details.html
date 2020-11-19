@@ -1,0 +1,62 @@
+{{>header}}
+
+<div class="container" style="margin-top: 75px; margin-bottom: 75px;">
+    <div class="jumbotron pt-5">
+        <h1 class="display-4"><strong>{{title}}</strong></h1>
+        <p class="lead" style="text-align: center;">Un projet créé par {{creator}} le {{date}}</p>
+        <p class="lead" style="text-align: center;">Suivi par {{numberOfMembers}} personne(s)</p>
+        <hr class="my-4">
+        <p>{{&description}}</p>
+        <hr class="mb-3 mt-4">
+        <p class="text-primary">Catégories : {{categories}} </p>
+        <p class="text-primary">Mots-clefs : {{keywords}} </p>
+        <p style="font-size: 1rem; color: chocolate;">Projet suivi par {{numberOfMembers}} personne(s)</p>
+        <hr class="mt-3 mb-4" style="border: 1px solid #0080FF;">
+        <p class="lead">
+          <a class="btn btn-primary mx-1" href="/project-details/membership/{{projectId}}" role="button">{{membershipButtonValue}}</a>
+          {{#isCreatorOfProject}}
+          <a class="btn btn-primary mx-1" href="/project-details/{{projectId}}/create-event" role="button">Créer un évènement</a>
+          <a class="btn btn-primary mx-1" href="/membersList/{{projectId}}" role="button">Gestion des membres</a>
+          <a class="btn btn-warning mx-1" href="/update-project-form/{{projectId}}" role="button">Modifier</a>
+          <a class="btn btn-danger mx-1" href="/delete-project/{{projectId}}" role="button">Supprimer</a>
+          {{/isCreatorOfProject}}
+          {{#isModerator}}
+          <a class="btn btn-primary mx-1" href="/project-details/{{projectId}}/create-event" role="button">Ajouter un évènement</a>
+          <a class="btn btn-primary mx-1" href="/membersList/{{projectId}}" role="button">Gestion des membres</a>
+          {{/isModerator}}
+          {{#isSupervisorOrAbove}}
+          <a class="btn btn-primary mx-1" href="/membersList/{{projectId}}" role="button">Gestion des membres</a>
+          <a class="btn btn-warning mx-1" href="/update-project-form/{{projectId}}" role="button">Modifier</a>
+          <a class="btn btn-danger mx-1" href="/delete-project/{{projectId}}" role="button">Supprimer</a>
+          {{/isSupervisorOrAbove}}
+        </p>
+        <hr class="my-4">
+        <p class="h4 col-sm-9">Evènements : </p>
+        <div class="row">
+          {{#events}}
+          <div class="col-sm-9 mx-auto">
+            <div class="card mt-3">
+              <div class="card-header">
+                Evènement créé par {{creator}}
+              </div>
+              <div class="card-body">
+                <h5 class="card-title text-primary">{{title}}</h5>
+                <p class="card-text">{{&description}}</p>
+                <span class="card-text text-secondary">Prévu le {{date}}</span>
+                {{#isModeratorOrAbove}}
+                <p class="lead">
+                  <a class="btn btn-primary text-white float-right mx-1" href="/project-details/{{projectId}}/{{title}}/update-event" role="button">Modifier</a>
+                  <a class="btn btn-primary text-white float-right mx-1" href="/project-details/{{projectId}}/{{title}}/delete-event" role="button">Supprimer</a>
+                </p>
+                {{/isModeratorOrAbove}}
+              </div>
+            </div>
+          </div>
+          {{/events}}
+        </div>
+    </div>
+</div>
+  
+
+
+{{>footer}}

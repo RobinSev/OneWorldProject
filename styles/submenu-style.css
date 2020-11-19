@@ -1,0 +1,44 @@
+.card-header {
+    text-align: center;
+}
+
+.list-group-item {
+    background : white;
+    text-decoration: none;
+    color: black;
+}
+
+.list-group-item:hover {
+    background: #0080FF;
+    color: white;
+    transition-duration: 200ms;
+}
+
+#droplink {
+    border-top: 1px solid black;
+}
+
+.param-link {
+    background-color: #A4A4A4;
+    border-radius: 0px;
+}
+
+.param-link:hover {
+    background-color: orange;
+    color: white;
+    border-radius: 0px;
+}
+
+#param-menu {
+    border-bottom: 1px solid black;
+}
+
+.exit-item {
+    color: red;
+}
+
+.exit-item:hover {
+    background: #B40404;
+    color: white;
+    transition-duration: 200ms;
+}
