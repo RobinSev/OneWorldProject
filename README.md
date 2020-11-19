@@ -3,7 +3,8 @@
 ## Context
 This project was realised during the second year of my computer science licence degree. We worked in duo. 
 
-**Objective :** the aim was to create a website in the theme of "making the world a better place". We decided to build a forum where people could share projects they were involved into to our users, gathering a community and planning event. 
+**Objective :** the aim was to create a website in the theme of "making the world a better place". We decided to build a forum where people could share projects they were involved into to our users, gather a community and plan events. 
+
 **My participation :** I was mainly involved in the model and controller, even though I implemented some views. 
 
 ## Evaluation criteria
@@ -15,6 +16,14 @@ We were evaluated on :
 
 ## Grade
 19/20
+
+## Dependencies
+
+* Node.js
+* framework : express js
+* template engine : mustache
+* better-squilte3
+* cookie-session
 
 ## Improvments
 
